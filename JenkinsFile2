@@ -72,8 +72,7 @@ pipeline {
       }
 	  stage('FaileStage &6') {
 		steps {
-			catchError(buildResult: 'FAILURE', stageResult: 'FAILURE') {
-				sh "exit 1"
+			sh fileNumber; // no such file
 			}
 		}
 	}
