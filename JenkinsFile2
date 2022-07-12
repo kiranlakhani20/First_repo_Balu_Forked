@@ -73,9 +73,9 @@ pipeline {
 	  stage('failStage &6') {
 		steps {
 		   
-			catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+			
 				sh "exit 1"
-			}
+			
 
 		}
 } 
