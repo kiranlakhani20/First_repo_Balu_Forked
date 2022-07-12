@@ -72,14 +72,15 @@ pipeline {
       }
 	  stage('FaileStage &6') {
 		steps {
-			sh fileNumber; // no such file
+			catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+				sh "exit 1"
 			}
 		}
 	}
-
- }
- 
 }
+
+ 
+
 
 def sonarSummaries() {
 
