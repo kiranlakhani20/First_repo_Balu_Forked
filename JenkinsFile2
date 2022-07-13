@@ -70,17 +70,28 @@ pipeline {
                     
                  }
       }   
-	  stage('passStage &6') {
+	  stage('fail1Stage &6') {
 		steps {
 		   
 			
-				echo 'Deploying the change....'
+				sh "exit 1"
 				
 			
 
 		}
 } 
-stage('failStage &7') {
+stage('pass1Stage &7') {
+		steps {
+		   
+			
+				
+				echo 'Deploying the change....'
+			
+			
+
+		}
+} 
+stage('fail2Stage &8') {
 		steps {
 		   
 			
@@ -91,23 +102,12 @@ stage('failStage &7') {
 
 		}
 } 
-stage('pass1Stage &8') {
+stage('fail3Stage &9') {
 		steps {
 		   
 			
 				
-				echo 'Deploying the change....'
-			
-			
-
-		}
-} 
-stage('pass2Stage &9') {
-		steps {
-		   
-			
-				
-				echo 'Deploying the change....'
+				sh "exit 1"
 			
 			
 
